@@ -244,6 +244,7 @@ grandMotherDay = new Date(1935, 7, 19);
 let howManyDays = function () {
   let today = new Date();
   let diff = today - grandMotherDay;
+  console.log(diff);
   const oneDay = 1000 * 60 * 60 * 24; // valore di un giorno
   diff = Math.floor(diff / oneDay);
   console.log("La differenza di giorni dal 19 Agosto 1935 a oggi è:", diff);
@@ -546,26 +547,77 @@ container();
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 console.log("Esercizio 21");
+
+const td = () => {
+  let td = document.querySelectorAll("td");
+  console.log(td);
+};
+td();
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+console.log("Esercizio 22");
 
+const tdContent = () => {
+  let td = document.querySelectorAll("td");
+  for (let i = 0; i < td.length; i++) {
+    console.log(td[i]);
+  }
+};
+tdContent();
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+console.log("Esercizio 23");
+
+const backgroundRed = () => {
+  const a = document.querySelectorAll("a");
+  for (let i = 0; i < a.length; i++) {
+    a[i].style.backgroundColor = "red";
+  }
+};
+backgroundRed();
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+console.log("Esercizio24");
+
+const addLi = (strng) => {
+  let li = document.createElement("li");
+  li.appendChild(document.createTextNode(strng));
+  document.getElementById("myList").appendChild(li);
+};
+addLi("LI AGGIUNTO IN JS");
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+console.log("Esercizio 26");
+
+const removeList = () => {
+  let ulMyList = document.getElementById("myList");
+  while (ulMyList.firstChild) {
+    ulMyList.removeChild(ulMyList.firstChild);
+  }
+};
+// removeList()
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+console.log("Esercizio 26");
+
+const addClass = () => {
+  let tr = document.querySelectorAll("tr");
+  for (let i = 0; i < tr.length; i++) {
+    tr[i].classList.add("test");
+  }
+};
+addClass();
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
