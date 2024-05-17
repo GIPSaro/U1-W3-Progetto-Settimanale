@@ -269,6 +269,7 @@ const isTodayMyBirthday = function () {
   }
 };
 isTodayMyBirthday();
+
 // Arrays & Oggetti
 console.log("Array & Oggetti");
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -452,34 +453,99 @@ console.log(
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+console.log("Esercizio 15");
+
+const onlyInLastMillennium = (arr) => {
+  return arr.filter((elem) => parseInt(elem.Year) < 2000);
+};
+console.log(
+  "I film prodotti nel precedente millennio sono:",
+  onlyInLastMillennium(movies)
+);
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+console.log("Esercizio 16");
 
+const sumAllTheYears = (numArr) => {
+  return numArr.reduce((sum, years) => sum + parseInt(years.Year), 0);
+};
+console.log(
+  "La somm degli anni dei film nell'array Movies è:",
+  sumAllTheYears(movies)
+);
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+console.log("Esercizio 17");
+
+const searchByTitle = (string) => {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.toLocaleLowerCase().includes(string)) {
+      console.log(movies[i]);
+    }
+  }
+};
+searchByTitle("lord");
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+console.log("Esercizio 18");
+
+const searchAndDivide = (string) => {
+  const objOfTwoArr = {
+    match: [],
+    unmatch: [],
+  };
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.toLocaleLowerCase().includes(string)) {
+      objOfTwoArr.match.push(movies[i]);
+    } else {
+      objOfTwoArr.unmatch.push(movies[i]);
+    }
+    console.log(objOfTwoArr);
+  }
+};
+searchAndDivide("lord");
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
+console.log("Esercizio 19");
+
+const removeIndex = (num) => {
+  movies.splice(num, 1);
+  return movies;
+};
+console.log(
+  "Array dei film con la rimozione di uno nella posizione scelta da me:",
+  removeIndex(11)
+);
+
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
+console.log("DOM");
 
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+console.log("Esercizio 20");
+
+const container = () => {
+  let container = document.getElementById("container");
+  console.log(container);
+};
+container();
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
-
+console.log("Esercizio 21");
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
