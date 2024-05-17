@@ -62,37 +62,81 @@ console.log("Esercizio F");
 
 me.skills.push("Maybe React");
 console.log("Aggiunta di un elemento in skills", me);
+
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+console.log("Esercizio G");
+
+me.skills.pop();
+console.log(
+  "Il mio oggetto con l'eliminazione dell'ultimo elemento nell'array skills",
+  me
+);
 
 // Funzioni
+console.log("FUNZIONI");
 
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+console.log("Esercizio 1");
+
+let dice = () => {
+  return Math.ceil(Math.random() * 6);
+};
+console.log(
+  "Il numero casuale tra 1 e 6 è generato con una funzione è:",
+  dice()
+);
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+console.log("Esercizio 2");
 
+const whoIsBigger = (n1, n2) => {
+  if (n1 > n2) {
+    return n1;
+  } else {
+    return n2;
+  }
+};
+console.log("Il maggiore tra i due parametri è:", whoIsBigger(55, 26));
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+console.log("Esercizio 3");
+
+const splitMe = (string) => {
+  return string.split(" ");
+};
+console.log(splitMe("That's It"));
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+console.log("Esercizio 4");
+
+const deleteOne = (strn, boolean) => {
+  if (boolean === true) {
+    return strn.substr(1);
+  } else {
+    return strn.slice(0, -1);
+  }
+};
+console.log(deleteOne("HELLO", 25 > 33));
+console.log(deleteOne("HELLO", 25 < 33));
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-
+console.log("Esercizio 5");
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
